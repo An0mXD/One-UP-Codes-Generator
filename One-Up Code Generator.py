@@ -68,8 +68,12 @@ num_codes = get_num_codes()
 #Generate random codes
 codes = generate_codes(num_codes)
 
-#Print generated codes
-print("\nGenerated codes:")
-for code in codes:
-    print(code)
+#Print generated codes and save them to a file called Output.txt in the directory of the script
+with open("output.txt", "w") as file:
+    file.write(chosen_logo)           #save the file with the logo choosen at start
+    file.write("\nGenerated codes:\n")
+    for code in codes:
+        file.write(code + "\n")
+
+print("Generated codes saved to output.txt.")          #last messages......
 
